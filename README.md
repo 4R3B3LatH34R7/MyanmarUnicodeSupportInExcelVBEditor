@@ -69,15 +69,20 @@ Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,
 Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
 ```vba
 Private Sub saveProdNamesInDict()
-  Dim arrTest, oneMMRname, oneProdName As String, rowIncrement As Long: rowIncrement = 0
+  Dim arrTest, oneMMRname
+  Dim oneProdName As String
+  Dim rowIncrement As Long: rowIncrement = 0
   Dim ShanSourRice As String: ShanSourRice = "4123|4158|4121|4154|4152|4113|4121|4100|4154|4152|4097|4155|4105|4154"
   Dim RakhineNoodleSoup: RakhineNoodleSoup = Array(4123, 4097, 4141, 4143, 4100, 4154, 4121, 4143, 4116, 4151, 4154, 4112, 4142)
   Dim WaMixedRice As String: WaMixedRice = "4125|4113|4121|4100|4154|4152|4126|4143|4117|4154"
-  arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice): Set dictProdNames = CreateObject("Scripting.Dictionary")
+  arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice)
+  Set dictProdNames = CreateObject("Scripting.Dictionary")
   For Each oneMMRname In arrTest
     oneProdName = convertToString(oneMMRname)
-    If Not dictProdNames.exists(oneProdName) Then dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
-    Sheet1.Range("C2").Offset(0 + rowIncrement, 1).Value = dictProdNames(oneProdName): rowIncrement = rowIncrement + 1
+    If Not dictProdNames.exists(oneProdName) Then
+      dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
+    End If
+    'Sheet1.Range("C2").Offset(0 + rowIncrement, 1).Value = dictProdNames(oneProdName): rowIncrement = rowIncrement + 1
   Next oneMMRname
 End Sub
 ```
