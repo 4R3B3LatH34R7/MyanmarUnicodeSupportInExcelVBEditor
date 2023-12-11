@@ -116,3 +116,21 @@ End Function
 ```
 Above is a very simple function that just takes a variant (because I have decided to allow liberal use of Strings and/or Arrays to hardcode Unicode character codes) as an argument and assigned it into a local Array variable to be processed using <code>ChrW</code> function to be returned as Myanmar Unicode String value as Function return value.\
 Here, we can just use <code>Join</code> function as doing so won't get back the String value stitched together as it was in original Myanmar Unicode Text String.
+
+Now that we have finished 1) gathering data, 2) converting into hard-code ready format 3), storing hard-coded values inside a Dictionary, we have only one remaining task, which is, a function to check whether a value exists inside our <code>Dictionary</code> which goes as follows:
+```vba
+Function checkProdNames(oneProdName As String) As Boolean
+  If dictProdNames Is Nothing Then
+    Call saveProdNamesInDict
+  Else If (Not dictProdNames Is Nothing) And dictProdNames.Count = 0 Then
+    Call saveProdNamesInDict
+  End If
+  checkProdNames = dictProdNames.exists(oneProdName)
+End Function
+```
+Not all of the above SubRoutines and Functions were necessary but more like they were there to make our lives easier.\
+We could directly save Myanmar Unicode Text Strings into Dictionary directly like:
+```vba
+dictProdNames.Add Key:=Sheet1.Range("C2").Value, Item:=Sheet1.Range("C2").Value & "|SKU" & rowCounter
+```
+however, I went the hard way because I wanted to highlight how to eliminate the need to maintain a worksheet containing Myanmar Unicode Text String but just directly store hard-coded Strings/Arrays of Unicode character codes <b>included inside the code</b>.
