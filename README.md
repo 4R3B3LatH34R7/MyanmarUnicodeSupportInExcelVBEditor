@@ -82,7 +82,7 @@ Private Sub saveProdNamesInDict()
   arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice)
   Set dictProdNames = CreateObject("Scripting.Dictionary")
   For Each oneMMRname In arrTest
-    oneProdName = <b>convertToString(oneMMRname)</b>
+    oneProdName = ***convertToString(oneMMRname)***
     If Not dictProdNames.exists(oneProdName) Then
       dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
     End If
@@ -90,4 +90,7 @@ Private Sub saveProdNamesInDict()
   Next oneMMRname
 End Sub
 ```
-While using a Dictionary is not really necessary, it was done so here just to highlight how to best use the information+structures we have in VBA, to improve the code.
+While using a Dictionary is not really necessary, it was done so here, just to highlight how to best use the information+structures we have in VBA, to improve the usability of the code.\
+In the above Sub, one variable was declared as a String of Unicode character code numbers while another was declared as an Array of Unicode character code numbers.\
+The intent here was, to point out that it is up to the individual to choose whichever structure to hold the data, as they desired.\
+
