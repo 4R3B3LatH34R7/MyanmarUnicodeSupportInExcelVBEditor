@@ -84,9 +84,9 @@ Private Sub saveProdNamesInDict()
   WaMixedRice = "4125|4113|4121|4100|4154|4152|4126|4143|4117|4154"
   arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice)
   Set dictProdNames = CreateObject("Scripting.Dictionary")
-  For Each oneMMRname In arrTest</code></pre>
-  <pre lang="vb"><code>oneProdName = <b>convertToString(oneMMRname)</b></code></pre>
-  <pre lang="vb"><code>
+  For Each oneMMRname In arrTest
+    oneProdName = <b> convertToString(oneMMRname) </b>
+  `one `**`two`**` three`
   If Not dictProdNames.exists(oneProdName) Then
       dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
     End If
