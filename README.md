@@ -141,3 +141,5 @@ Here comes the part on how we can check a variable against existing/stored Myanm
 ```vba
 If sProdName = "ရှမ်းထမင်းချဉ်" Then
 ```
+I could write code like that but why satisfy with simple when we can go complicated!
+![output_immediate](images/example_immediate.png)
