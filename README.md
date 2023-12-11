@@ -26,9 +26,3 @@ While there's nothing wrong with this approach, there are a few pros and cons ab
 |1|End-User could update values per their requirements|End-User could mess up|
 |2|Could be a feature|Remedy above with changing worksheet visibility|
 
-
-|Header1|Header2|Header3|
-| --- | --- | --- |
-| This | is a | table |
-| This | is 2nd | row |
-| This | is 3rd | row |
