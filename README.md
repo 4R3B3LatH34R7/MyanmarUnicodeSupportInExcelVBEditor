@@ -143,3 +143,31 @@ If sProdName = "ရှမ်းထမင်းချဉ်" Then
 ```
 I could write code like that but why satisfy with simple when we can go complicated!
 ![output_immediate](images/example_immediate.png)
+
+The following Worksheet_Change event handler code should be placed in Sheet1's code module.
+```vba
+Private Sub Worksheet_Change(ByVal target As Range)
+  Dim SKUnumber As String
+  If Not Application.Intersect(Me.Range("C:C"), target) Is Nothing Then
+    If target.CountLarge > 1 Then Exit Sub
+    If target.Value = "" Then Exit Sub
+    If checkProdNames(target.Value) Then
+      SKUnumber = "is = " & Split(dictProdNames(target.Value), "|")(0)
+    Else
+      SKUnumber = "NOT in DB!"
+    End If
+    Application.EnableEvents = False
+    target.Offset(0, 1).Value = SKUnumber
+    Application.EnableEvents = True
+  End If
+End Sub
+```
+In the above event handler code, we can see:
+```vba
+If checkProdNames(target.Value) Then
+```
+which is equivalent of better than:
+```vba
+If sProdName = "ရခိုင်မုန့်တီ"
+```
+to me, at least.
