@@ -102,7 +102,11 @@ That function can be found as below:
 ```vba
 Function convertToString(incomingVar As Variant) As String
   Dim arrIncoming, Unicode
-  If TypeName(incomingVar) = "String" Then arrIncoming = Split(incomingVar, IIf(InStr(incomingVar, ",") = 0, "|", ",")) Else arrIncoming = incomingVar
+  If TypeName(incomingVar) = "String" Then
+    arrIncoming = Split(incomingVar, IIf(InStr(incomingVar, ",") = 0, "|", ","))
+  Else
+    arrIncoming = incomingVar
+  End If
   Dim retSt As String: retSt = ""
   For Each Unicode In arrIncoming
     retSt = retSt & ChrW(Unicode)
