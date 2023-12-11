@@ -82,7 +82,7 @@ Private Sub saveProdNamesInDict()
   arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice)
   Set dictProdNames = CreateObject("Scripting.Dictionary")
   For Each oneMMRname In arrTest
-    oneProdName = <mark>convertToString(oneMMRname)</mark>
+    oneProdName = `**`convertToString(oneMMRname)`**`
   If Not dictProdNames.exists(oneProdName) Then
       dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
     End If
