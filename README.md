@@ -23,6 +23,7 @@ If sProdName = Sheet1.Range("A1") then
 While there's nothing wrong with this approach, there are a few pros and cons about this.
 |No.|pros|cons|
 |---|---|---|
-|1|End-User could update values per their requirements|End-User could mess up|
-|2|Could be a feature|Remedy above with changing worksheet visibility|
+|1|Easy|FileSize bigger|
+|2|1End-User could update values per their requirements|End-User could mess up|
+|3|Could be a feature|Remedy above with changing worksheet visibility|
 
