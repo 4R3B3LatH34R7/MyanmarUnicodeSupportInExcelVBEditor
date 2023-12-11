@@ -18,7 +18,7 @@ If sProdName = "ရှမ်းခေါက်ဆွဲ" Then
 I realized that we can just employ a simple method like below.\
 I just need to put the word ရှမ်းခေါက်ဆွဲ in Cell A1 of worksheet Sheet1 and reference from the code like:
 ```vba
-If sProdName = Sheet1.Range("A1") then
+If sProdName = Sheet1.Range("A1").Value then
 ```
 While there's nothing wrong with this approach, there are a few pros and cons about this.
 |No.|pros|cons|
