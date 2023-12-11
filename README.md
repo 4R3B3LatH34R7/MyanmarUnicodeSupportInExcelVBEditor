@@ -135,7 +135,7 @@ dictProdNames.Add Key:=Sheet1.Range("C2").Value, Item:=Sheet1.Range("C2").Value 
 ```
 however, I went the hard way because I wanted to highlight how to eliminate the need to maintain a worksheet containing Myanmar Unicode Text String but just directly store hard-coded Strings/Arrays of Unicode character codes <b>included inside the code</b>.
 
-All of the aforementioned codes can be place anywhere but preferably inside their own code modules.\
+All of the aforementioned codes can be place anywhere but preferably inside their own code modules.
 
 Here comes the part on how we can check a variable against existing/stored Myanmar Unicode Text String like:
 ```vba
