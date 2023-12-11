@@ -38,12 +38,19 @@ Basically, we just need some Sub/Function to convet a list of Myanmar Unicode te
 This is a one-time process. However, we could repeat this as much as we need/want.\
 The proposed function could be as simple as what's outlined below:
 ```vba
-Sub convertMMRtoUnicodeArray(Optional theSeparator As String = "|") 'to collect unicode values to be used as arrays or string in subs/functions
-'immediate -> for each oneCell in range("C2:C4"):st="":for i=1 to len(oneCell):st=st &iif(st="","","|") &ascw(mid(oneCell,i,1)) :next i:?st:next oneCell
+'to collect unicode values to be used as arrays or string in subs/functions
+Sub convertMMRtoUnicodeArray(Optional theSeparator As String = "|") 
   Dim oneCell, i As Integer, st As String
   For Each oneCell In Sheet1.Range("C2:C4") 'change range as required
-    st = "": For i = 1 To Len(oneCell): st = st & IIf(st = "", "", IIf(theSeparator <> "|", theSeparator, "|")) & AscW(Mid(oneCell, i, 1)): Next i
+    st = ""
+    For i = 1 To Len(oneCell)
+      st = st & IIf(st = "", "", IIf(theSeparator <> "|", theSeparator, "|")) & AscW(Mid(oneCell, i, 1))
+    Next i
     Debug.Print oneCell.Address(False, False) & " = " & st
   Next oneCell
 End Sub
+```
+Above function could be easily shortened to become a one-liner we can run inside the Immediate window, without needing writing a function in CodePane inside of VBE:
+```vba
+for each oneCell in range("C2:C4"):st="":for i=1 to len(oneCell):st=st &iif(st="","","|") &ascw(mid(oneCell,i,1)) :next i:?st:next oneCell
 ```
