@@ -168,7 +168,7 @@ If checkProdNames(target.Value) Then
 ```
 which is equivalent of better than:
 ```vba
-If sProdName = "ရခိုင်မုန့်တီ"
+If sProdName = "ရခိုင်မုန့်တီ" Then
 ```
 to me, at least.
 
