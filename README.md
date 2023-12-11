@@ -24,6 +24,6 @@ While there's nothing wrong with this approach, there are a few pros and cons ab
 |No.|pros|cons|
 |---|---|---|
 |1|Easy|FileSize bigger|
-|2|1End-User could update values per their requirements|End-User could mess up|
+|2|End-User could update values per their requirements|End-User could mess up|
 |3|Could be a feature|Remedy above with changing worksheet visibility|
 
