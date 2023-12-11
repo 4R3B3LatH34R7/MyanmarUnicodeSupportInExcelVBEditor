@@ -68,13 +68,17 @@ Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,
 
 Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
 ```vba
+'Sub to hardcode/save Unicode numbers in arrays or strings to be saved into Dictionary for further checking
 Private Sub saveProdNamesInDict()
   Dim arrTest, oneMMRname
   Dim oneProdName As String
   Dim rowIncrement As Long: rowIncrement = 0
-  Dim ShanSourRice As String: ShanSourRice = "4123|4158|4121|4154|4152|4113|4121|4100|4154|4152|4097|4155|4105|4154"
-  Dim RakhineNoodleSoup: RakhineNoodleSoup = Array(4123, 4097, 4141, 4143, 4100, 4154, 4121, 4143, 4116, 4151, 4154, 4112, 4142)
-  Dim WaMixedRice As String: WaMixedRice = "4125|4113|4121|4100|4154|4152|4126|4143|4117|4154"
+  Dim ShanSourRice As String
+  ShanSourRice = "4123|4158|4121|4154|4152|4113|4121|4100|4154|4152|4097|4155|4105|4154"
+  Dim RakhineNoodleSoup
+  RakhineNoodleSoup = Array(4123, 4097, 4141, 4143, 4100, 4154, 4121, 4143, 4116, 4151, 4154, 4112, 4142)
+  Dim WaMixedRice As String
+  WaMixedRice = "4125|4113|4121|4100|4154|4152|4126|4143|4117|4154"
   arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice)
   Set dictProdNames = CreateObject("Scripting.Dictionary")
   For Each oneMMRname In arrTest
