@@ -188,6 +188,4 @@ We could probably SubClass the VBIDE's code panes and change them to Unicode com
 
 ### Extra Material
 I included the following video to further enhance what's I've mentioned below.
-<video width="1910" height="948" controls>
-  <source src="images/unicode_in_vbe.mp4" type="video/mp4">
-</video>
+<video width="1910" height="948" src="images/unicode_in_vbe.mp4"></video>
