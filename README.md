@@ -185,3 +185,9 @@ All programmers got stump at one point or another but don't let it stop you. Try
 We could save Myanmar Unicode values into a .txt file and extract it at runtime as the workbook is opened.\
 We could combine maintaining an extra worksheet containing Myanmar Unicode values and converting to Unicode character codes together.\
 We could probably SubClass the VBIDE's code panes and change them to Unicode compatible windows via Win32API function calls but this may not be very cost efficient and won't be very stable, IMHO.
+
+### Extra Material
+I included the following video to further enhance what's I've mentioned below.
+<video width="1910" height="948" controls>
+  <source src="images/unicode_in_vbe.mp4" type="video/mp4">
+</video>
