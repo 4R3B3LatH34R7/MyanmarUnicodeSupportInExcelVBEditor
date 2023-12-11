@@ -188,4 +188,4 @@ We could probably SubClass the VBIDE's code panes and change them to Unicode com
 
 ### Extra Material
 I included the following video to further enhance what's I've mentioned below.
-<video width="1910" height="948" src="https://github.com/4R3B3LatH34R7/MyanmarUnicodeSupportInExcelVBEditor/assets/53028471/cec9fb5f-936b-4899-9910-fc537b7f33fd"</video>
+<video width="1910" height="948" src="https://github.com/4R3B3LatH34R7/MyanmarUnicodeSupportInExcelVBEditor/assets/53028471/cec9fb5f-936b-4899-9910-fc537b7f33fd"></video>
