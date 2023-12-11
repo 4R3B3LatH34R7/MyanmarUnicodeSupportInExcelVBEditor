@@ -38,7 +38,7 @@ Basically, we just need some Sub/Function to convet a list of Myanmar Unicode te
 This is a one-time process. However, we could repeat this as much as we need/want.\
 The proposed function could be as simple as what's outlined below:
 ```vba
-'to collect unicode values to be used as arrays or string in subs/functions
+'Sub to collect unicode values to be used as arrays or string in subs/functions
 Sub convertMMRtoUnicodeArray(Optional theSeparator As String = "|") 
   Dim oneCell, i As Integer, st As String
   For Each oneCell In Sheet1.Range("C2:C4") 'change range as required
@@ -55,15 +55,15 @@ Above function could be easily shortened to become a one-liner we can run inside
 for each oneCell in range("C2:C4"):st="":for i=1 to len(oneCell):st=st &iif(st="","","|") &ascw(mid(oneCell,i,1)) :next i:?st:next oneCell
 ```
 
-The output of above function can be observed below:
+The output of above Sub can be observed below:
 ![output_convertMMRtoUnicodeNumber](images/convertingMMRtoUnicodeNumber.png)
 
-The same function with comma(s) "," or any other separator(s) for any other purposes desired:
+The same Sub with comma(s) "," or any other separator(s) for any other purposes desired:
 ![output_convertMMRtoUnicodeNumber_commaseparated](images/convertingMMRtoUnicodeNumber_comma.png)
 
-From the included screenshots, it is clear that the function just converted each Myanmar character/diacritics into it's own Unicode numbers according to the order that they were entered into the cells.\
-NB:It is worth noting here that the above concept/code/implementations are all assumed to be used with Windows builtin Myanmar Keyboard known as, "Myanmar Keyboard (Visual Order)".
-The way the Myanmar words were entered into the cells should be like ရ,ှ,မ,်,း,ထ,မ,င,်,း,ခ,ျ,ဉ,် as for ရှမ်းထမင်းချဉ် in C2.
+From the included screenshots, it is clear that the SubRoutine above just converted each Myanmar character/diacritics into it's own Unicode numbers according to the order that they were entered into the cells.\
+NB:It is worth noting here that the above concept/code/implementations are all assumed to be used with Windows builtin Myanmar Keyboard known as, "Myanmar Keyboard (Visual Order)".\
+The way the Myanmar words were entered into the cells should be like ရ,ှ,မ,်,း,ထ,မ,င,်,း,ခ,ျ,ဉ,် as for ရှမ်းထမင်းချဉ် in C2.\
 Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,4113,4121,4100,4154,4152,4097,4155,4105,4154 representing the whole word in C2.
 
 Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
@@ -82,7 +82,7 @@ Private Sub saveProdNamesInDict()
   arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice)
   Set dictProdNames = CreateObject("Scripting.Dictionary")
   For Each oneMMRname In arrTest
-    oneProdName = convertToString(oneMMRname)
+    oneProdName = <b>convertToString(oneMMRname)</b>
     If Not dictProdNames.exists(oneProdName) Then
       dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
     End If
@@ -90,3 +90,4 @@ Private Sub saveProdNamesInDict()
   Next oneMMRname
 End Sub
 ```
+While using a Dictionary is not really necessary, it was done so here just to highlight how to best use the information+structures we have in VBA, to improve the code.
