@@ -70,7 +70,7 @@ Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,
 
 Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
 
-<pre lang="vba"> #14
+<pre lang="vba"> 
 'Sub to hardcode/save Unicode numbers in arrays or strings to be saved into Dictionary for further checking
 Private Sub saveProdNamesInDict()
   Dim arrTest, oneMMRname
@@ -97,4 +97,19 @@ End Sub
 While using a Dictionary is not really necessary, it was done so here, just to highlight how to best use the information+structures we have in VBA, to improve the usability of the code.\
 In the above Sub, one variable was declared as a String of Unicode character code numbers while another was declared as an Array of Unicode character code numbers.\
 The intent here was, to point out that it is up to the individual to choose whichever structure to hold the data, as they desired.\
-In the above Subrountine, on Line#14, 
+In the above Subrountine, on Line-14, <code>oneProdName = <b>convertToString(oneMMRname)</b></code>, we used a function called convertToString to re-convert the Unicode character codes stored as Strings and/or Arrays back to Myanmar Unicode characters.\
+That function can be found as below:
+```
+Private Function convertToString(incomingVar As Variant) As String
+  Dim arrIncoming, Unicode
+  If TypeName(incomingVar) = "String" Then arrIncoming = Split(incomingVar, "|") Else arrIncoming = incomingVar
+  Dim retSt As String
+  retSt = ""
+  For Each Unicode In arrIncoming
+    retSt = retSt & ChrW(Unicode)
+  Next Unicode
+  convertToString = retSt
+End Function
+```
+Above is a very simple function that just takes a variant (because I have decided to allow liberal use of Strings and/or Arrays to hardcode Unicode character codes) as an argument and assigned it into a local Array variable to be processed using <code>ChrW</code> function to be returned as Myanmar Unicode String value as Function return value.\
+Here, we can just use <code>Join</code> function as doing so won't get back the String value stitched together as it was in original Myanmar Unicode Text String.
