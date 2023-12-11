@@ -171,3 +171,17 @@ which is equivalent of better than:
 If sProdName = "ရခိုင်မုန့်တီ"
 ```
 to me, at least.
+
+### Conclusion
+To a n00b, it might seem like the end of the world if we can't write Myanmar Unicode values inside VBIDE.\
+I know because I was once a n00b too and I remember feeling exactly like that.
+
+However, n00bs should understand that VBIDE can still process the Myanmar Unicode values inside the RAM even if it can't show/render Unicode font to be displayed.\
+We need to have problem solving skills which could be attained by lateral thinking and thinking out of the box.
+
+All programmers got stump at one point or another but don't let it stop you. Try and find a way to circumvent around a problem, because, there's always one out there.
+
+### Further Explorations
+We could save Myanmar Unicode values into a .txt file and extract it at runtime as the workbook is opened.\
+We could combine maintaining an extra worksheet containing Myanmar Unicode values and converting to Unicode character codes together.\
+We could probably SubClass the VBIDE's code panes and change them to Unicode compatible windows via Win32API function calls but this may not be very cost efficient and won't be very stable, IMHO.
