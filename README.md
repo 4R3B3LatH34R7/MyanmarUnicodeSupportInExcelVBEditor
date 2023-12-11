@@ -99,7 +99,7 @@ In the above Sub, one variable was declared as a String of Unicode character cod
 The intent here was, to point out that it is up to the individual to choose whichever structure to hold the data, as they desired.\
 In the above Subrountine, on Line-14, <code>oneProdName = <b>convertToString(oneMMRname)</b></code>, we used a function called convertToString to re-convert the Unicode character codes stored as Strings and/or Arrays back to Myanmar Unicode characters.\
 That function can be found as below:
-```
+```vba
 Private Function convertToString(incomingVar As Variant) As String
   Dim arrIncoming, Unicode
   If TypeName(incomingVar) = "String" Then arrIncoming = Split(incomingVar, "|") Else arrIncoming = incomingVar
