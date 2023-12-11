@@ -187,5 +187,5 @@ We could combine maintaining an extra worksheet containing Myanmar Unicode value
 We could probably SubClass the VBIDE's code panes and change them to Unicode compatible windows via Win32API function calls but this may not be very cost efficient and won't be very stable, IMHO.
 
 ### Extra Material
-I included the following video to further enhance what's I've mentioned below.
+I included the following video to further enhance what's I've mentioned above.
 <video width="1910" height="948" src="https://github.com/4R3B3LatH34R7/MyanmarUnicodeSupportInExcelVBEditor/assets/53028471/cec9fb5f-936b-4899-9910-fc537b7f33fd"></video>
