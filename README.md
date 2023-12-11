@@ -70,7 +70,7 @@ Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,
 
 Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
 
-<pre><code lang="vb">
+<pre  lang="vb"><code>
 'Sub to hardcode/save Unicode numbers in arrays or strings to be saved into Dictionary for further checking
 Private Sub saveProdNamesInDict()
   Dim arrTest, oneMMRname
