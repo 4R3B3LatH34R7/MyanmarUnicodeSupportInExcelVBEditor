@@ -1,4 +1,4 @@
-# Myanmar Unicode in Excel VBEditor
+# Myanmar Unicode Support in Excel VBEditor
 ## A Brief Review of Approaches to Visualize Unicode in VBIDE in Microsoft Excel
 This is going to be just discussing ways to show Unicode characters in Excel's VBEditor.\
 The premises I shall base all this upon, are, <b>MS Excel 2010, Myanmar Unicode font: Pyidaungsu</b> only.\
