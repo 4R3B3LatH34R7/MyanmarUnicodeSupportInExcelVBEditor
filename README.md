@@ -11,7 +11,7 @@ While it is generally easy to find out the cause, most people who started writin
 And all that we type in VBE in Myanmar Unicode font will show up like "???".
 
 ### II. How do we approach this problem?
-I was a n00b once but even back then, if I wanted to check whether a variable is equal to items written in Myanmar Unicode font:\
+I was a n00b once but even back then, if I wanted to check whether a variable is equal to items written in Myanmar Unicode font:
 ```vba
 If sProdName = "ရှမ်းခေါက်ဆွဲ" Then
 ```
@@ -20,7 +20,7 @@ I just need to put the word ရှမ်းခေါက်ဆွဲ in Cell A1 o
 ```vba
 If sProdName = Sheet1.Range("A1") then
 ```
-While there's nothing wrong with this approach, there are a few pros and cons about this.\
+While there's nothing wrong with this approach, there are a few pros and cons about this.
 |No.|pros|cons|
 |---|---|---|
 |1|End-User could update values per their requirements|End-User could mess up|
