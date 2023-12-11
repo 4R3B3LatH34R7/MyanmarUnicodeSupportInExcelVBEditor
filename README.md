@@ -55,4 +55,4 @@ Above function could be easily shortened to become a one-liner we can run inside
 for each oneCell in range("C2:C4"):st="":for i=1 to len(oneCell):st=st &iif(st="","","|") &ascw(mid(oneCell,i,1)) :next i:?st:next oneCell
 ```
 The output of above function can be observed below:
-
+![output_convertMMRtoUnicodeNumber](images/convertingMMRtoUnicodeNumber.png)
