@@ -7,8 +7,8 @@ For any other situation, I have no guarantee that this discussion could be appli
 ### I. Cause of Problem
 Why do I even have to discuss this?\
 There are many Myanmar people who find this situation frustrating, including me, when we tried to write Myanmar words in Myanmar Unicode fonts like, Pyidaungsu.\
-While it is generally easy to find out the cause, most people who started writing VBA code cannot even have the necessary googling skills just find out nor the basic English language skills, nor the coding knowledge to understand that, the VBE(VBIDE/Visual Basic Editor) only works with ANSI codepage, thus, it cannot show Unicode characters. Period. Microsoft will not fix this, as of right now, 11DEC2023 09:30AM MMR STD time.\
-And all that we type in VBE in Myanmar Unicode font will show up like ???.
+While it is generally easy to find out the cause, most people who started writing VBA code doe not even have the necessary googling skills just find out nor the basic English language skills, nor the coding knowledge to understand that, the VBE(VBIDE/Visual Basic Editor) only works with ANSI codepage, thus, it cannot show Unicode characters. Period. Microsoft will not fix this, as of right now, 11DEC2023 09:30AM MMR STD time.\
+And all that we type in VBE in Myanmar Unicode font will show up like "???".
 
 ### II. How do we approach this problem?
 I was a n00b once but even back then, if I wanted to check whether a variable is equal to items written in Myanmar Unicode font:\
@@ -25,3 +25,10 @@ While there's nothing wrong with this approach, there are a few pros and cons ab
 |...|----|----|
 |1|End-User could update values per their requirements|End-User could mess up|
 |2|Could be a feature|Remedy above with changing worksheet visibility|
+
+
+|Header1|Header2|Header3|
+| --- | --- | --- |
+| This | is a | table |
+| This | is 2nd | row |
+| This | is 3rd | row |
