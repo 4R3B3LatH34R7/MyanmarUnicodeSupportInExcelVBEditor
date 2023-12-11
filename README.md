@@ -131,6 +131,6 @@ End Function
 Not all of the above SubRoutines and Functions were necessary but more like they were there to make our lives easier.\
 We could directly save Myanmar Unicode Text Strings into Dictionary directly like:
 ```vba
-dictProdNames.Add Key:=Sheet1.Range("C2").Value, Item:=Sheet1.Range("C2").Value & "|SKU" & rowCounter
+  dictProdNames.Add Key:=Sheet1.Range("C2").Value, Item:=Sheet1.Range("C2").Value & "|SKU" & rowCounter
 ```
 however, I went the hard way because I wanted to highlight how to eliminate the need to maintain a worksheet containing Myanmar Unicode Text String but just directly store hard-coded Strings/Arrays of Unicode character codes <b>included inside the code</b>.
