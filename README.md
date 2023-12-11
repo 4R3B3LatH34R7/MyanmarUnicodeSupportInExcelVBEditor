@@ -166,7 +166,7 @@ In the above event handler code, we can see:
 ```vba
 If checkProdNames(target.Value) Then
 ```
-which is equivalent of better than:
+which is equivalent or better than:
 ```vba
 If sProdName = "ရခိုင်မုန့်တီ" Then
 ```
