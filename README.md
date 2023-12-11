@@ -56,3 +56,5 @@ for each oneCell in range("C2:C4"):st="":for i=1 to len(oneCell):st=st &iif(st="
 ```
 The output of above function can be observed below:
 ![output_convertMMRtoUnicodeNumber](images/convertingMMRtoUnicodeNumber.png)
+The same function with comma(s) "," or any other separators for any other purposes desired:
+![output_convertMMRtoUnicodeNumber](images/convertingMMRtoUnicodeNumber_comma.png)
