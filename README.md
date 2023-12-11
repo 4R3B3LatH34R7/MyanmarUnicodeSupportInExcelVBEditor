@@ -67,7 +67,7 @@ The way the Myanmar words were entered into the cells should be like ရ,ှ,မ
 Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,4113,4121,4100,4154,4152,4097,4155,4105,4154 representing the whole word in C2.
 
 Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
-<pre><code>vb
+<pre lang=vb>
 'Sub to hardcode/save Unicode numbers in arrays or strings to be saved into Dictionary for further checking
 Private Sub saveProdNamesInDict()
   Dim arrTest, oneMMRname
@@ -89,7 +89,7 @@ Private Sub saveProdNamesInDict()
     'Sheet1.Range("C2").Offset(0 + rowIncrement, 1).Value = dictProdNames(oneProdName): rowIncrement = rowIncrement + 1
   Next oneMMRname
 End Sub
-</code></pre>
+</pre>
 While using a Dictionary is not really necessary, it was done so here, just to highlight how to best use the information+structures we have in VBA, to improve the usability of the code.\
 In the above Sub, one variable was declared as a String of Unicode character code numbers while another was declared as an Array of Unicode character code numbers.\
 The intent here was, to point out that it is up to the individual to choose whichever structure to hold the data, as they desired.\
