@@ -50,11 +50,34 @@ Sub convertMMRtoUnicodeArray(Optional theSeparator As String = "|")
   Next oneCell
 End Sub
 ```
-Above function could be easily shortened to become a one-liner we can run inside the Immediate window, without needing writing a function in CodePane inside of VBE:
+Above function could be easily shortened to become a one-liner we can run inside the Immediate window, without needing to write a function in CodePane inside of VBE:
 ```vba
 for each oneCell in range("C2:C4"):st="":for i=1 to len(oneCell):st=st &iif(st="","","|") &ascw(mid(oneCell,i,1)) :next i:?st:next oneCell
 ```
+
 The output of above function can be observed below:
 ![output_convertMMRtoUnicodeNumber](images/convertingMMRtoUnicodeNumber.png)
-The same function with comma(s) "," or any other separators for any other purposes desired:
-![output_convertMMRtoUnicodeNumber](images/convertingMMRtoUnicodeNumber_comma.png)
+
+The same function with comma(s) "," or any other separator(s) for any other purposes desired:
+![output_convertMMRtoUnicodeNumber_commaseparated](images/convertingMMRtoUnicodeNumber_comma.png)
+
+From the included screenshots, it is clear that the function just converted each Myanmar character/diacritics into it's own Unicode numbers according to the order that they were entered into the cells.\
+NB:It is worth noting here that the above concept/code/implementations are all assumed to be used with Windows builtin Myanmar Keyboard known as, "Myanmar Keyboard (Visual Order)".
+The way the Myanmar words were entered into the cells should be like ရ,ှ,မ,်,း,ထ,မ,င,်,း,ခ,ျ,ဉ,် as for ရှမ်းထမင်းချဉ် in C2.
+Therefore, the Unicode number sequence was captured as 4123,4158,4121,4154,4152,4113,4121,4100,4154,4152,4097,4155,4105,4154 representing the whole word in C2.
+
+Once we get the Unicode character codes of the values we want to hardcode into our code, we can put them into variables with a function like below:
+```vba
+Private Sub saveProdNamesInDict()
+  Dim arrTest, oneMMRname, oneProdName As String, rowIncrement As Long: rowIncrement = 0
+  Dim ShanSourRice As String: ShanSourRice = "4123|4158|4121|4154|4152|4113|4121|4100|4154|4152|4097|4155|4105|4154"
+  Dim RakhineNoodleSoup: RakhineNoodleSoup = Array(4123, 4097, 4141, 4143, 4100, 4154, 4121, 4143, 4116, 4151, 4154, 4112, 4142)
+  Dim WaMixedRice As String: WaMixedRice = "4125|4113|4121|4100|4154|4152|4126|4143|4117|4154"
+  arrTest = Array(ShanSourRice, RakhineNoodleSoup, WaMixedRice): Set dictProdNames = CreateObject("Scripting.Dictionary")
+  For Each oneMMRname In arrTest
+    oneProdName = convertToString(oneMMRname)
+    If Not dictProdNames.exists(oneProdName) Then dictProdNames.Add Key:=oneProdName, Item:="SKU" & rowIncrement + 1 & "|" & oneProdName
+    Sheet1.Range("C2").Offset(0 + rowIncrement, 1).Value = dictProdNames(oneProdName): rowIncrement = rowIncrement + 1
+  Next oneMMRname
+End Sub
+```
