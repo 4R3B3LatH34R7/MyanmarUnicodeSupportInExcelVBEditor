@@ -1,5 +1,5 @@
 # Myanmar Unicode Support in Excel VBEditor
-NO. IT IS NOT SUPPORTED. AND THIS REPO CONTAINS NO METHOD TO SUPPORT IT!
+NO. IT IS NOT SUPPORTED. AND THIS REPO CONTAINS NO METHOD TO REVERSE IT!
 
 ## A Brief Review of Approaches to Visualize Unicode in VBIDE in MS Excel
 This is going to be just discussing ways to show Unicode characters in Excel's VBEditor.\
